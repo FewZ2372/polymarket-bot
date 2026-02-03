@@ -1,3 +1,8 @@
+# Fly.io configuration for Polymarket Bot
+# Deploy: fly deploy
+# Logs: fly logs
+# Status: fly status
+
 app = "pm-scanner-felipe"
 primary_region = "iad"
 
@@ -6,7 +11,36 @@ primary_region = "iad"
 
 [env]
   PYTHONUNBUFFERED = "1"
+  PORT = "8080"
+  # Set these via fly secrets:
+  # fly secrets set PRIVATE_KEY=your_key
+  # fly secrets set AUTO_TRADE_ENABLED=false
+  # fly secrets set DRY_RUN=true
 
-[[services]]
+[http_service]
   internal_port = 8080
-  protocol = "tcp"
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/health"
+
+[metrics]
+  port = 8080
+  path = "/status"
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
