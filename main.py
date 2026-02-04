@@ -266,8 +266,8 @@ class PolymarketBot:
                             if ins_sig.confidence < 75:
                                 continue
                             
-                            # Require reasonable price range (15% - 50%) - tighter range
-                            if ins_sig.current_price < 0.15 or ins_sig.current_price > 0.50:
+                            # Require reasonable price range (5% - 92%) - expanded for 100% WR version
+                            if ins_sig.current_price < 0.05 or ins_sig.current_price > 0.92:
                                 continue
                             
                             # Require significant volume spike (at least 4x for insider)

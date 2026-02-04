@@ -36,8 +36,8 @@ class SmartTrader:
     - Small position sizes, high volume
     """
     
-    # Allow only 1 trade per market - DIVERSIFY across many markets
-    MAX_TRADES_PER_MARKET = 1
+    # Allow multiple trades per market for more volume
+    MAX_TRADES_PER_MARKET = 10
     
     # Maximum days until market resolution - SHORT TERM ONLY
     MAX_DAYS_TO_EXPIRY = 21  # 3 weeks max
@@ -117,9 +117,9 @@ class SmartTrader:
         if entry_price < 0.05:
             return False, f"Price {entry_price:.2%} too cheap (likely dying market)"
         
-        # RULE 3c: Price cap for decent upside
-        # At 50c: win = +100%, lose = -100% (1:1 minimum acceptable)
-        MAX_ENTRY_PRICE = 0.50  # 50 cents max
+        # RULE 3c: Price cap - allow higher prices for certain strategies
+        # The 100% WR version traded at prices up to 90c
+        MAX_ENTRY_PRICE = 0.92  # Allow up to 92c (version with 100% WR)
         if entry_price > MAX_ENTRY_PRICE:
             return False, f"Price {entry_price:.0%} > {MAX_ENTRY_PRICE:.0%} max"
         
@@ -227,10 +227,12 @@ class SmartTradeResolver:
     
     # Take profit settings - OPTIONAL early exit if big gains
     # The main exit is market resolution, but we can take profit early
+    # NOTE: This class is NOT used - trade_resolver.py handles exits
+    # These values are kept in sync with TradeResolver for consistency
     TAKE_PROFIT_SETTINGS = {
-        'low': 0.25,      # +25% for cheap markets (high upside potential)
-        'medium': 0.15,   # +15% for medium markets
-        'high': 0.10,     # +10% for expensive markets
+        'low': 0.50,      # +50% for cheap markets (version with 100% WR)
+        'medium': 0.30,   # +30% for medium markets
+        'high': 0.15,     # +15% for expensive markets
     }
     
     # NO STOP LOSS - Let markets resolve

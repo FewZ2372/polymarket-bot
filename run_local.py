@@ -25,6 +25,7 @@ from config import config
 from advanced_strategies import advanced_scanner
 from strategy_learner import strategy_learner
 from smart_trader import smart_trader
+from platforms import multi_scanner
 
 
 # =============================================================================
@@ -41,32 +42,41 @@ from smart_trader import smart_trader
 MIN_CONFIDENCE_TO_TRADE = 65      # Lower threshold = more trades
 MIN_SCORE_TO_TRADE = 60           # Relaxed from 80
 
-# Price filters - Broader range to catch more opportunities
-MAX_ENTRY_PRICE = 0.30            # Expanded slightly
-MAX_ENTRY_PRICE_PROVEN = 0.45     # For proven patterns
+# Price filters - Allow full range like 100% WR version
+MAX_ENTRY_PRICE = 0.92            # Allow high prices (100% WR version traded at 89c)
+MAX_ENTRY_PRICE_PROVEN = 0.92     # Same for proven patterns
 
 # Trade limits - MORE trades per cycle
 MAX_ADVANCED_TRADES_PER_CYCLE = 10  # Was 5, now 10
 
-# Strategy-specific settings - ONLY proven strategies
+# Strategy-specific settings - ENABLED for testing
 STRATEGY_CONFIG = {
     'RESOLUTION_ARB': {
-        'enabled': False,          # NOT real arbitrage - it's speculation
+        'enabled': True,           # Resolution arbitrage
+        'min_confidence': 70,
+        'min_profit_pct': 5.0,
     },
     'TIME_DECAY': {
-        'enabled': False,          # Also speculative
+        'enabled': True,           # Time decay (theta plays)
+        'min_confidence': 65,
+        'max_days_to_expiry': 7,
     },
     'MULTI_OUTCOME': {
-        'enabled': False,          # Complex execution
+        'enabled': False,          # Complex execution - keep disabled
     },
     'CORRELATED': {
-        'enabled': False,          # Needs development
+        'enabled': False,          # Needs more development
     },
     'INSIDER': {
-        'enabled': False,          # Not reliable enough
+        'enabled': True,           # Insider signals - enabled
+        'min_confidence': 70,
     },
     'SPORTS': {
-        'enabled': False,          # Not reliable
+        'enabled': False,          # Not reliable enough yet
+    },
+    'CROSS_PLATFORM_ARB': {
+        'enabled': True,           # Cross-platform arbitrage (PM cheaper)
+        'min_spread': 0.03,        # 3% minimum spread
     },
 }
 
@@ -183,6 +193,15 @@ def is_trade_allowed(opp: dict) -> tuple[bool, str]:
         if profit < min_profit:
             return False, f"Profit {profit:.1f}% < min {min_profit}%"
     
+    if strategy == 'CROSS_PLATFORM_ARB':
+        spread = opp.get('spread_pct', 0)
+        min_spread = config_item.get('min_spread', 0.03) * 100  # Convert to pct
+        if spread < min_spread:
+            return False, f"Spread {spread:.1f}% < min {min_spread:.1f}%"
+        # CRITICAL: Only trade if Polymarket has the LOWER price
+        if opp.get('buy_platform') != 'Polymarket':
+            return False, f"Buy on {opp.get('buy_platform')}, not Polymarket"
+    
     return True, "OK"
 
 
@@ -194,12 +213,26 @@ async def run_advanced_scan(execute_trades: bool = False):
     
     results = advanced_scanner.scan_all()
     
+    # Also scan for cross-platform arbitrage
+    cross_platform_opps = []
+    if STRATEGY_CONFIG.get('CROSS_PLATFORM_ARB', {}).get('enabled', False):
+        try:
+            cross_platform_opps = multi_scanner.get_polymarket_arbitrage_trades(
+                min_spread=STRATEGY_CONFIG['CROSS_PLATFORM_ARB'].get('min_spread', 0.03),
+                min_confidence=MIN_CONFIDENCE_TO_TRADE
+            )
+            results['cross_platform'] = len(cross_platform_opps)
+        except Exception as e:
+            log.warning(f"Cross-platform scan error: {e}")
+            results['cross_platform'] = 0
+    
     # Quick summary
     print(f"\n[SCAN RESULTS]")
-    print(f"  Resolution Arbitrage: {results.get('resolution', 0)} found")
-    print(f"  Time Decay:           {results.get('time_decay', 0)} found")
-    print(f"  Insider Signals:      {results.get('insider', 0)} found")
-    print(f"  Total:                {results.get('total', 0)} raw opportunities")
+    print(f"  Resolution Arbitrage:  {results.get('resolution', 0)} found")
+    print(f"  Time Decay:            {results.get('time_decay', 0)} found")
+    print(f"  Insider Signals:       {results.get('insider', 0)} found")
+    print(f"  Cross-Platform Arb:    {results.get('cross_platform', 0)} found")
+    print(f"  Total:                 {results.get('total', 0) + len(cross_platform_opps)} raw opportunities")
     
     if not execute_trades:
         print("\n[MODE] Scan only - trading disabled")
@@ -213,6 +246,9 @@ async def run_advanced_scan(execute_trades: bool = False):
     
     # Get tradeable opportunities
     tradeable_raw = advanced_scanner.get_tradeable_opportunities(min_confidence=60)  # Low initial filter
+    
+    # Add cross-platform arbitrage opportunities
+    tradeable_raw.extend(cross_platform_opps)
     
     # Apply calibrated filters
     tradeable_filtered = []

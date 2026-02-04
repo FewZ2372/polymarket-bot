@@ -51,7 +51,7 @@ class RiskManager:
     MAX_SPREAD_PCT = 0.50  # 50% spread OK for small bets
     MAX_DAYS_TO_RESOLUTION = 30  # 1 month max
     MIN_PRICE = 0.02  # Don't buy below 2 cents
-    MAX_PRICE = 0.50  # 50 cents max
+    MAX_PRICE = 0.92  # Allow up to 92c (100% WR version traded at 89c)
     
     # === DRAWDOWN LIMITS ===
     DAILY_LOSS_LIMIT = -0.15  # -15% daily loss → pause 24h

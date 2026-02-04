@@ -302,10 +302,11 @@ class StrategyLearner:
             reasons.append(f"Price range {price_range} has {price_wr:.0f}% WR")
             return False, adjusted_confidence, "; ".join(reasons)
         
-        # Apply strict filter for high prices (learned from v22)
-        if entry_price > 0.50 and not self._is_proven_high_price_strategy(strategy):
-            reasons.append(f"High price ({entry_price:.0%}) not proven for {strategy}")
-            return False, adjusted_confidence, "; ".join(reasons)
+        # NOTE: High price filter DISABLED - the 100% WR version traded at 89c
+        # Allow high prices by default, let market health and other filters handle risk
+        # if entry_price > 0.50 and not self._is_proven_high_price_strategy(strategy):
+        #     reasons.append(f"High price ({entry_price:.0%}) not proven for {strategy}")
+        #     return False, adjusted_confidence, "; ".join(reasons)
         
         return True, adjusted_confidence, "OK"
     

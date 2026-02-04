@@ -48,15 +48,15 @@ class TradeResolver:
     # Initial targets are optimistic, then we accept smaller gains
     THRESHOLDS = {
         'low': {      # Entry < 0.30
-            'take_profit': 0.45,  # +45% initial target
+            'take_profit': 0.50,  # +50% initial target (version that had 100% WR)
             'stop_loss': -0.20,   # -20%
         },
         'medium': {   # Entry 0.30 - 0.70
-            'take_profit': 0.25,  # +25% initial
+            'take_profit': 0.30,  # +30% initial
             'stop_loss': -0.15,   # -15%
         },
         'high': {     # Entry > 0.70
-            'take_profit': 0.10,  # +10% initial
+            'take_profit': 0.15,  # +15% initial
             'stop_loss': -0.10,   # -10%
         }
     }
@@ -64,11 +64,11 @@ class TradeResolver:
     # Time-based take profit decay (hours -> multiplier)
     # After X hours, accept lower take profit
     TIME_DECAY_SCHEDULE = {
-        0: 1.0,      # 0-12h: 100% of target (e.g., +45%)
-        12: 0.75,    # 12-24h: 75% of target (e.g., +33%)
-        24: 0.50,    # 24-48h: 50% of target (e.g., +22%)
-        48: 0.25,    # 48-72h: 25% of target (e.g., +11%)
-        72: 0.10,    # >72h: 10% of target (e.g., +4.5%) - just get out
+        0: 1.0,      # 0-12h: 100% of target (e.g., +50%)
+        12: 0.75,    # 12-24h: 75% of target (e.g., +37.5%)
+        24: 0.50,    # 24-48h: 50% of target (e.g., +25%)
+        48: 0.25,    # 48-72h: 25% of target (e.g., +12.5%)
+        72: 0.10,    # >72h: 10% of target (e.g., +5%) - just get out
     }
     
     def _get_thresholds(self, entry_price: float) -> dict:
