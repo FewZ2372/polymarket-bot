@@ -230,8 +230,8 @@ class SmartTradeResolver:
     # These match trade_resolver.py initial targets (before time decay)
     TAKE_PROFIT_SETTINGS = {
         'low': 0.50,      # +50% for cheap markets (high upside potential)
-        'medium': 0.25,   # +25% for medium markets
-        'high': 0.10,     # +10% for expensive markets
+        'medium': 0.20,   # +20% for medium markets (v22 value)
+        'high': 0.08,     # +8% for expensive markets (v22 value)
     }
     
     # NO STOP LOSS - Let markets resolve

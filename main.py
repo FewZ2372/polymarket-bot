@@ -36,9 +36,6 @@ from simulation_tracker import simulation_tracker
 from risk_manager import risk_manager
 from onchain_tracker import onchain_tracker
 from orderbook_analyzer import orderbook_analyzer
-from arbitrage_scanner import arbitrage_scanner
-from signal_detector import signal_detector
-from market_health import market_health
 
 
 class PolymarketBot:
@@ -68,7 +65,7 @@ class PolymarketBot:
             
             # 1. Fetch and analyze markets from Polymarket
             markets = get_top_markets(
-                limit=75,  # Analyze top 75 markets (fetches 200 from API)
+                limit=30,  # Get more, we'll filter
                 sentiment_analyzer=self.sentiment_analyzer
             )
             
@@ -89,48 +86,15 @@ class PolymarketBot:
             if momentum_signals:
                 log.info(f"Detected {len(momentum_signals)} momentum signals")
             
-            # 3. Check for cross-platform arbitrage (REAL arbitrage)
-            # Only trade when Polymarket has the LOWEST price (we can actually buy there)
+            # 3. Check for cross-platform arbitrage
             try:
-                # Get tradeable opportunities where Polymarket is cheapest
-                arb_trades = multi_scanner.get_polymarket_arbitrage_trades(
-                    min_spread=0.05,  # Minimum 5% spread for real arb
-                    min_confidence=75
-                )
-                
-                if arb_trades:
-                    log.info(f"[CROSS-PLATFORM ARB] {len(arb_trades)} opportunities where Polymarket is cheapest")
-                    
-                    # Execute trades on Polymarket
-                    if can_trade and config.trading.auto_trade_enabled:
-                        for arb_opp in arb_trades[:3]:  # Max 3 arb trades per cycle
-                            # Format for trader
-                            arb_market = {
-                                'question': arb_opp['question'],
-                                'slug': arb_opp['slug'],
-                                'yes': arb_opp['yes'],
-                                'no': arb_opp['no'],
-                                'score': arb_opp['score'],
-                                'spread': arb_opp['spread'],
-                                'category': 'cross_platform_arb',
-                                'suggested_side': 'YES',
-                                'strategy': 'CROSS_PLATFORM_ARB',
-                                'reason': arb_opp['reason'],
-                            }
-                            
-                            try:
-                                trade_result = trader.execute_trade(arb_market)
-                                if trade_result and trade_result.success:
-                                    bot_state.record_trade()
-                                    log.info(f"[ARB TRADE] Cross-platform: BUY YES | {arb_opp['question'][:35]} | "
-                                            f"PM: {arb_opp['yes']:.2%} vs {arb_opp['reference_platform']}: {arb_opp['reference_price']:.2%}")
-                            except Exception as te:
-                                log.debug(f"Error executing cross-platform arb: {te}")
-                    else:
-                        for opp in arb_trades[:3]:
-                            log.info(f"  {opp['question'][:40]} | {opp['spread_pct']:.1f}% spread vs {opp['reference_platform']}")
+                arbitrage_opps = multi_scanner.find_arbitrage_opportunities(min_spread=0.03)
+                if arbitrage_opps:
+                    log.info(f"Found {len(arbitrage_opps)} cross-platform arbitrage opportunities")
+                    for opp in arbitrage_opps[:3]:
+                        log.info(f"  [{opp['spread_pct']:.1f}%] {opp['title'][:40]} | Buy {opp['buy_on']} @ {opp['buy_price']:.2f}, Sell {opp['sell_on']} @ {opp['sell_price']:.2f}")
             except Exception as e:
-                log.debug(f"Error in cross-platform arbitrage scan: {e}")
+                log.debug(f"Error in arbitrage scan: {e}")
             
             # 4. Check for event-driven opportunities
             try:
@@ -152,156 +116,6 @@ class PolymarketBot:
                             log.info(f"  [ORDERBOOK] {sig['market'][:30]} | {signal['action']} (conf: {signal['confidence']}%)")
             except Exception as e:
                 log.debug(f"Error in orderbook analysis: {e}")
-            
-            # 4.6 Scan for all arbitrage opportunities
-            try:
-                arb_summary = arbitrage_scanner.scan_all()
-                
-                if arb_summary['total'] > 0:
-                    log.info(f"[ARBITRAGE SCAN] Found {arb_summary['total']} total opportunities:")
-                    log.info(f"  Multi-Outcome: {arb_summary['multi_outcome']} | "
-                            f"Resolution: {arb_summary['resolution']} | "
-                            f"Time Decay: {arb_summary['time_decay']} | "
-                            f"Correlated: {arb_summary['correlated']}")
-                    
-                    # Log best opportunities
-                    for best in arb_summary['best_opportunities'][:3]:
-                        opp_type = best['type']
-                        profit = best['profit_pct']
-                        conf = best['confidence']
-                        name = best['data'].get('market', '')[:35]
-                        
-                        if opp_type == 'TIME_DECAY':
-                            daily = best.get('daily_return', 0)
-                            log.info(f"  [{opp_type}] {name} | {profit:.1f}% total ({daily:.2f}%/day) | Conf: {conf}%")
-                        else:
-                            log.info(f"  [{opp_type}] {name} | {profit:.1f}% profit | Conf: {conf}%")
-                    
-                    # AUTO-TRADE: DISABLED - "Resolution Arbitrage" is NOT real arbitrage
-                    # It's speculation disguised as arbitrage and loses money
-                    if False and config.trading.auto_trade_enabled:
-                        for res_opp in arbitrage_scanner._resolution_opps[:5]:
-                            # Only trade if confidence >= 75 and profit >= 5%
-                            if res_opp.confidence >= 75 and res_opp.profit_pct >= 5.0:
-                                # Determine the correct outcome to buy
-                                # expected_price > 0.5 means YES will win → buy YES
-                                # expected_price <= 0.5 means NO will win → buy NO
-                                should_buy_yes = res_opp.expected_price > 0.5
-                                
-                                # Convert resolution opportunity to market dict format
-                                arb_market = {
-                                    'question': res_opp.market_title,
-                                    'slug': res_opp.market_slug,
-                                    'condition_id': res_opp.market_id,
-                                    'token_id': res_opp.token_id,
-                                    'yes': res_opp.current_price,  # Always pass actual YES price
-                                    'no': 1 - res_opp.current_price,  # NO = 1 - YES
-                                    'score': 90 + int(res_opp.profit_pct),  # High score for arb
-                                    'spread': res_opp.profit_pct / 100,
-                                    'category': 'arbitrage',
-                                    'end_date': res_opp.end_date,
-                                    'forced_outcome': 'YES' if should_buy_yes else 'NO',  # Force correct outcome
-                                }
-                                
-                                try:
-                                    trade_result = trader.execute_trade(arb_market)
-                                    if trade_result and trade_result.success:
-                                        bot_state.record_trade()
-                                        outcome = 'YES' if should_buy_yes else 'NO'
-                                        log.info(f"[ARB TRADE] Resolution arb: BUY {outcome} | {res_opp.market_title[:35]} | "
-                                                f"Profit: {res_opp.profit_pct:.1f}%")
-                                except Exception as te:
-                                    log.debug(f"Error executing arb trade: {te}")
-            except Exception as e:
-                log.debug(f"Error in arbitrage scan: {e}")
-            
-            # 4.7 Detect insider activity and sports mispricing
-            try:
-                signal_summary = signal_detector.scan_all()
-                
-                if signal_summary['total_signals'] > 0:
-                    log.info(f"[SIGNAL DETECTION] Found {signal_summary['total_signals']} signals:")
-                    log.info(f"  Insider: {signal_summary['insider_signals']} | "
-                            f"Sports: {signal_summary['sports_mispricings']}")
-                    
-                    # Log actionable signals
-                    actionable = signal_detector.get_actionable_signals(min_confidence=65)
-                    for sig in actionable[:3]:
-                        sig_type = sig['type']
-                        action = sig['action']
-                        conf = sig['confidence']
-                        data = sig['data']
-                        
-                        if sig_type == 'INSIDER':
-                            log.info(f"  [INSIDER] {action}: {data['market'][:35]} | "
-                                    f"Vol: {data['volume_spike']}x | Conf: {conf}%")
-                        else:
-                            log.info(f"  [SPORTS] {data['sport']}: Bet {data['undervalued']} vs {data['overvalued']} | "
-                                    f"Edge: {data['edge']:.1f}% | Conf: {conf}%")
-                    
-                    # AUTO-TRADE: Execute trades on high-confidence INSIDER ACCUMULATION signals
-                    if can_trade and config.trading.auto_trade_enabled:
-                        insider_signals = signal_detector._insider_signals
-                        
-                        # Words that indicate meme/absurd markets - skip these
-                        MEME_KEYWORDS = [
-                            'jesus', 'christ', 'god', 'alien', 'ufo', 'zombie', 'vampire',
-                            'bigfoot', 'loch ness', 'flat earth', 'illuminati', 'reptilian',
-                            'time travel', 'teleport', 'immortal', 'resurrect', 'rapture',
-                            'gta vi', 'gta 6', 'before gta',  # GTA meme markets
-                        ]
-                        
-                        for ins_sig in insider_signals[:2]:  # Max 2 insider trades per cycle
-                            # Only trade ACCUMULATION signals (someone quietly buying)
-                            if ins_sig.signal_type != 'ACCUMULATION':
-                                continue
-                            
-                            # Skip meme/absurd markets
-                            title_lower = ins_sig.market_title.lower()
-                            if any(kw in title_lower for kw in MEME_KEYWORDS):
-                                log.debug(f"Skipping meme market: {ins_sig.market_title[:40]}")
-                                continue
-                            
-                            # Require high confidence
-                            if ins_sig.confidence < 75:
-                                continue
-                            
-                            # Require reasonable price range (15% - 50%) - tighter range
-                            if ins_sig.current_price < 0.15 or ins_sig.current_price > 0.50:
-                                continue
-                            
-                            # Require significant volume spike (at least 4x for insider)
-                            if ins_sig.volume_spike_ratio < 4.0:
-                                continue
-                            
-                            # Require minimum absolute volume ($10k+)
-                            if ins_sig.volume_24h < 10000:
-                                continue
-                            
-                            # Build market dict for trader
-                            insider_market = {
-                                'question': ins_sig.market_title,
-                                'slug': ins_sig.market_slug,
-                                'yes': ins_sig.current_price,
-                                'no': 1 - ins_sig.current_price,
-                                'score': 85 + int(ins_sig.volume_spike_ratio),  # Base 85 + volume bonus
-                                'spread': 0.02,
-                                'category': 'insider_signal',
-                                'suggested_side': 'YES',  # Accumulation = expect price to go up
-                                'strategy': 'INSIDER_ACCUMULATION',
-                                'volume_spike': ins_sig.volume_spike_ratio,
-                            }
-                            
-                            try:
-                                trade_result = trader.execute_trade(insider_market)
-                                if trade_result and trade_result.success:
-                                    bot_state.record_trade()
-                                    log.info(f"[INSIDER TRADE] Accumulation: BUY YES | {ins_sig.market_title[:35]} | "
-                                            f"Vol: {ins_sig.volume_spike_ratio:.1f}x | Price: {ins_sig.current_price:.0%}")
-                            except Exception as te:
-                                log.debug(f"Error executing insider trade: {te}")
-            except Exception as e:
-                log.debug(f"Error in signal detection: {e}")
             
             # 5. Process high-score opportunities
             for market in markets:
@@ -327,11 +141,6 @@ class PolymarketBot:
                     trade_result: Optional[TradeResult] = None
                     
                     if config.trading.auto_trade_enabled:
-                        # Mark as SWING trade - we exit by price (time-decay TP), not resolution
-                        # This bypasses expiry filter since we'll be out before then
-                        if 'strategy' not in market:
-                            market['strategy'] = 'SWING'
-                        
                         trade_result = trader.execute_trade(market)
                         
                         if trade_result and trade_result.success:
@@ -377,19 +186,10 @@ class PolymarketBot:
                         log.info(f"Swing exited {len(resolution_results['swing_exits'])} trades")
                     
                     # Update risk manager with current P&L
-                    # Use actual simulation balance, not theoretical starting_balance
                     sim_stats = simulation_tracker.get_stats()
-                    current_balance = sim_stats.get('total_invested', 0) + sim_stats.get('total_pnl', 0)
-                    
-                    # Sync peak_balance with simulation reality (first time or reset)
-                    if risk_manager.state.peak_balance > current_balance * 2:
-                        log.info(f"[RISK] Syncing peak to simulation balance: {current_balance:.2f}")
-                        risk_manager.state.peak_balance = current_balance
-                        risk_manager.state.current_drawdown_pct = 0.0
-                        risk_manager.state.is_trading_allowed = True
-                        risk_manager.state.pause_reason = None
-                    
-                    risk_manager.update_balance(current_balance)
+                    risk_manager.update_balance(
+                        sim_stats.get('total_invested', 0) + sim_stats.get('total_pnl', 0)
+                    )
                     risk_manager.record_daily_pnl(
                         pnl=sim_stats.get('realized_pnl', 0),
                         pnl_pct=sim_stats.get('pnl_pct', 0) / 100,
@@ -399,45 +199,6 @@ class PolymarketBot:
                     )
                 except Exception as e:
                     log.debug(f"Error in trade resolution: {e}")
-            
-            # 8. Update Market Health Monitor
-            try:
-                # Convert trades to dict format for health monitor
-                trades_for_health = [
-                    {
-                        'timestamp': t.timestamp,
-                        'pnl_pct': t.pnl_pct,
-                        'status': t.status,
-                        'spread': getattr(t, 'spread', 0),
-                        'exit_time': getattr(t, 'exit_time', None),
-                    }
-                    for t in simulation_tracker.trades
-                ]
-                
-                # Calculate health metrics
-                health_metrics = market_health.calculate_metrics(trades_for_health)
-                
-                # Log health status (avoid emoji for Windows encoding)
-                status_symbols = {"HEALTHY": "[OK]", "CAUTION": "[!]", "WARNING": "[!!]", "CRITICAL": "[X]"}
-                symbol = status_symbols.get(health_metrics.status, "[?]")
-                log.info(f"[MARKET HEALTH] {symbol} {health_metrics.status} (Score: {health_metrics.health_score}/100)")
-                log.info(f"  ROI: {health_metrics.avg_roi_pct:+.1f}% | Win Rate: {health_metrics.win_rate*100:.0f}% | "
-                        f"Trades: {health_metrics.trades_analyzed}")
-                
-                # Log adjustments if not healthy
-                adj = market_health.get_adjustments()
-                if health_metrics.status != "HEALTHY":
-                    log.warning(f"[HEALTH ADJ] Position size: {adj.position_size_multiplier:.0%} | "
-                               f"Min score: {adj.min_score_threshold} | Max trades: {adj.max_concurrent_trades}")
-                    log.warning(f"[HEALTH] {adj.reason}")
-                
-                # Check if we should alert
-                should_alert, alert_msg = market_health.should_alert()
-                if should_alert and alert_msg:
-                    alerter.send_raw_message(alert_msg)
-                    
-            except Exception as e:
-                log.debug(f"Error updating market health: {e}")
             
             log.info("Scan cycle completed")
             

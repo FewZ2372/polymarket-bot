@@ -1,7 +1,6 @@
 """
 Trade Resolver - Automatically resolves trades and calculates P&L.
 Also handles swing trading (exit positions for profit before resolution).
-VERSION: v22 (production working version)
 """
 import requests
 import json
@@ -43,32 +42,22 @@ class TradeResolver:
     
     POLYMARKET_API = "https://gamma-api.polymarket.com/markets"
     
-    # Dynamic swing trading thresholds based on entry price AND time held
-    # Take profit DECREASES over time to avoid stuck capital
-    # Initial targets are optimistic, then we accept smaller gains
+    # Dynamic swing trading thresholds based on entry price
+    # Low entry = more upside potential, hold longer
+    # High entry = less upside, take profit quickly
     THRESHOLDS = {
         'low': {      # Entry < 0.30
-            'take_profit': 0.50,  # +50% initial target
+            'take_profit': 0.50,  # +50%
             'stop_loss': -0.20,   # -20%
         },
         'medium': {   # Entry 0.30 - 0.70
-            'take_profit': 0.25,  # +25% initial
+            'take_profit': 0.20,  # +20%
             'stop_loss': -0.15,   # -15%
         },
         'high': {     # Entry > 0.70
-            'take_profit': 0.10,  # +10% initial
+            'take_profit': 0.08,  # +8%
             'stop_loss': -0.10,   # -10%
         }
-    }
-    
-    # Time-based take profit decay (hours -> multiplier)
-    # After X hours, accept lower take profit
-    TIME_DECAY_SCHEDULE = {
-        0: 1.0,      # 0-12h: 100% of target (e.g., +45%)
-        12: 0.75,    # 12-24h: 75% of target (e.g., +33%)
-        24: 0.50,    # 24-48h: 50% of target (e.g., +22%)
-        48: 0.25,    # 48-72h: 25% of target (e.g., +11%)
-        72: 0.10,    # >72h: 10% of target (e.g., +4.5%) - just get out
     }
     
     def _get_thresholds(self, entry_price: float) -> dict:
@@ -87,14 +76,7 @@ class TradeResolver:
     
     def fetch_market_status(self, slug: str) -> Optional[Dict]:
         """Fetch current status of a market from Polymarket API."""
-        import time
         try:
-            # Check if cache needs to be cleared (older than TTL)
-            now = time.time()
-            if now - self._cache_time > self._cache_ttl:
-                self._market_cache = {}
-                self._cache_time = now
-            
             # Try to get from cache first
             if slug in self._market_cache:
                 return self._market_cache[slug]
@@ -180,24 +162,14 @@ class TradeResolver:
         except:
             return 0.5, 0.5
     
-    def _get_time_decay_multiplier(self, hours_held: float) -> float:
-        """Get the take profit multiplier based on how long we've held the trade."""
-        # Find the appropriate decay level
-        for threshold_hours in sorted(self.TIME_DECAY_SCHEDULE.keys(), reverse=True):
-            if hours_held >= threshold_hours:
-                return self.TIME_DECAY_SCHEDULE[threshold_hours]
-        return 1.0  # Default to full target
-    
     def check_swing_opportunity(self, trade) -> SwingOpportunity:
         """
         Check if we should exit a trade early for profit/loss.
         
-        TIME-DECAYING take profit:
-        - 0-12h: 100% of target (e.g., +45% for low entry)
-        - 12-24h: 75% of target (e.g., +33%)
-        - 24-48h: 50% of target (e.g., +22%)
-        - 48-72h: 25% of target (e.g., +11%)
-        - >72h: 10% of target (e.g., +4.5%) - free up capital
+        Dynamic swing trading logic based on entry price:
+        - Low entry (<0.30): Hold longer, target +50%, stop at -20%
+        - Medium entry (0.30-0.70): Target +20%, stop at -15%
+        - High entry (>0.70): Quick exit, target +8%, stop at -10%
         """
         slug = trade.market_slug
         entry_price = trade.entry_price
@@ -216,52 +188,43 @@ class TradeResolver:
         else:
             profit_pct = 0
         
-        # Calculate how long we've held this trade
-        try:
-            entry_time = datetime.fromisoformat(trade.timestamp.replace('Z', '+00:00'))
-            hours_held = (datetime.now(entry_time.tzinfo) - entry_time).total_seconds() / 3600
-        except:
-            try:
-                entry_time = datetime.fromisoformat(trade.timestamp)
-                hours_held = (datetime.now() - entry_time).total_seconds() / 3600
-            except:
-                hours_held = 0
-        
         # Get dynamic thresholds based on entry price
         thresholds = self._get_thresholds(entry_price)
-        base_take_profit = thresholds['take_profit']
-        # Note: stop_loss removed - we wait for resolution instead of cutting losses early
-        
-        # Apply time decay to take profit
-        decay_multiplier = self._get_time_decay_multiplier(hours_held)
-        take_profit = base_take_profit * decay_multiplier
-        
-        # Minimum take profit floor (don't go below +3%)
-        take_profit = max(take_profit, 0.03)
+        take_profit = thresholds['take_profit']
+        stop_loss = thresholds['stop_loss']
         
         action = "HOLD"
         price_tier = "low" if entry_price < 0.30 else ("high" if entry_price > 0.70 else "medium")
-        reason = f"Holding ({price_tier}, {hours_held:.0f}h, target: +{take_profit*100:.0f}%)"
+        reason = f"Holding ({price_tier} entry, target: +{take_profit*100:.0f}%)"
         
-        # Take profit (time-decayed)
+        # Take profit
         if profit_pct >= take_profit:
             action = "SELL"
-            reason = f"Take profit ({price_tier}, {hours_held:.0f}h): +{profit_pct*100:.1f}% (target was +{take_profit*100:.0f}%)"
+            reason = f"Take profit ({price_tier}): +{profit_pct*100:.1f}% (target was +{take_profit*100:.0f}%)"
         
-        # Near-certain YES - always exit (locking gains)
+        # Stop loss
+        elif profit_pct <= stop_loss:
+            action = "SELL"
+            reason = f"Stop loss ({price_tier}): {profit_pct*100:.1f}% (limit was {stop_loss*100:.0f}%)"
+        
+        # Near-certain outcome - always exit
         elif current_price >= 0.98:
             action = "SELL"
             reason = f"Near-certain YES: price at {current_price:.2f}, locking in gains"
         
         elif current_price <= 0.02:
-            # Near-certain NO - market is basically resolved, cut losses
             action = "SELL"
-            reason = f"Near-certain NO: price at {current_price:.2f}, market resolving against us"
+            reason = f"Near-certain NO: price at {current_price:.2f}, cutting losses"
         
-        # After 72h, exit if we have ANY profit
-        elif hours_held > 72 and profit_pct > 0:
-            action = "SELL"
-            reason = f"Time exit ({hours_held:.0f}h): taking +{profit_pct*100:.1f}% to free capital"
+        # Trailing stop for big winners: if we WERE up 30%+ but now dropped below 15%
+        # This needs historical tracking - for now, use price movement as proxy
+        elif entry_price < 0.30 and profit_pct >= 0.15 and profit_pct < 0.25:
+            # We're up decent but not at target - check if we should protect gains
+            # If price dropped significantly from what could have been higher
+            potential_high = entry_price * 1.30  # What +30% would have been
+            if current_price < potential_high * 0.85:  # Dropped 15% from potential high
+                action = "SELL"
+                reason = f"Trailing stop: protecting +{profit_pct*100:.1f}% gain (could drop further)"
         
         return SwingOpportunity(
             trade_id=trade.id,
@@ -301,13 +264,6 @@ class TradeResolver:
                     trade.resolve(resolution.winning_outcome)
                     simulation_tracker.save()
                     
-                    # Update smart_trader to free up the position slot
-                    try:
-                        from smart_trader import smart_trader
-                        smart_trader.remove_position(trade.market, trade.outcome)
-                    except:
-                        pass
-                    
                     results['resolved'].append({
                         'trade_id': trade.id,
                         'market': trade.market[:40],
@@ -331,13 +287,6 @@ class TradeResolver:
                     trade.status = "EXITED"
                     trade.resolved = True
                     simulation_tracker.save()
-                    
-                    # Update smart_trader to free up the position slot
-                    try:
-                        from smart_trader import smart_trader
-                        smart_trader.remove_position(trade.market, trade.outcome)
-                    except:
-                        pass
                     
                     results['swing_exits'].append({
                         'trade_id': trade.id,

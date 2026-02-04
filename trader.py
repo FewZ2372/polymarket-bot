@@ -1,7 +1,6 @@
 """
 Auto-trading module for Polymarket.
 Executes trades based on detected opportunities.
-VERSION: v22 (production working version)
 """
 import time
 from typing import Dict, Any, Optional, Tuple
@@ -30,9 +29,9 @@ class TradeSide(Enum):
 
 
 class OrderStrategy(Enum):
-    MARKET = "market"
-    LIMIT = "limit"
-    LIMIT_IOC = "limit_ioc"
+    MARKET = "market"  # Execute immediately at best price
+    LIMIT = "limit"  # Set price, wait for fill
+    LIMIT_IOC = "limit_ioc"  # Limit, immediate or cancel
 
 
 @dataclass
@@ -43,7 +42,7 @@ class TradeResult:
     side: Optional[TradeSide] = None
     amount: float = 0.0
     price: float = 0.0
-    limit_price: Optional[float] = None
+    limit_price: Optional[float] = None  # For limit orders
     market: str = ""
     error: Optional[str] = None
     timestamp: datetime = field(default_factory=datetime.now)
@@ -61,7 +60,9 @@ class DailyStats:
     total_pnl: float = 0.0
     
     def can_trade(self, amount: float, max_daily: float) -> bool:
+        """Check if we can make another trade within daily limits."""
         if self.date != date.today():
+            # Reset for new day
             self.date = date.today()
             self.total_exposure = 0.0
             self.trades_count = 0
@@ -76,8 +77,9 @@ class PolymarketTrader:
     Handles automatic trading on Polymarket using the CLOB API.
     """
     
+    # Polymarket CLOB endpoints
     CLOB_HOST = "https://clob.polymarket.com"
-    CHAIN_ID = 137
+    CHAIN_ID = 137  # Polygon mainnet
     
     def __init__(self):
         self.client: Optional[ClobClient] = None
@@ -95,15 +97,19 @@ class PolymarketTrader:
         self._initialize_client()
     
     def _initialize_client(self):
+        """Initialize the Polymarket CLOB client."""
         try:
+            # Create account from private key
             self.account = Account.from_key(config.wallet.private_key)
             
+            # Initialize CLOB client
             self.client = ClobClient(
                 self.CLOB_HOST,
                 key=config.wallet.private_key,
                 chain_id=self.CHAIN_ID,
             )
             
+            # Derive API credentials if not provided
             if not config.polymarket_api.is_configured:
                 log.info("Deriving API credentials from wallet...")
                 self.client.set_api_creds(self.client.create_or_derive_api_creds())
@@ -124,47 +130,48 @@ class PolymarketTrader:
     
     @property
     def is_ready(self) -> bool:
+        """Check if the trader is ready to execute trades."""
         return self._initialized and self.client is not None
     
     def get_balance(self) -> Optional[float]:
+        """Get USDC balance from the trading account."""
         if not self.is_ready:
             return None
         
         try:
+            # The CLOB client should have a method to get balance
+            # This depends on the specific client implementation
             balance_info = self.client.get_balance_allowance()
-            return float(balance_info.get('balance', 0)) / 1e6
+            return float(balance_info.get('balance', 0)) / 1e6  # USDC has 6 decimals
         except Exception as e:
             log.error(f"Error getting balance: {e}")
             return None
     
     def should_trade(self, opportunity: Dict[str, Any]) -> Tuple[bool, str]:
+        """
+        Determine if we should trade based on the opportunity and config.
+        
+        Returns:
+            Tuple of (should_trade, reason)
+        """
         if not config.trading.auto_trade_enabled:
             return False, "Auto-trading disabled"
         
-        # In dry_run mode, we don't need the CLOB client
-        if not config.trading.dry_run and not self.is_ready:
+        if not self.is_ready:
             return False, "Trader not initialized"
-        
-        # SMART TRADER: Check for duplicates first
-        try:
-            from smart_trader import smart_trader
-            # Support both suggested_side and forced_outcome
-            outcome = opportunity.get('forced_outcome') or opportunity.get('suggested_side', 'YES')
-            can_trade, reason = smart_trader.should_trade(opportunity, outcome)
-            if not can_trade:
-                return False, f"[SMART] {reason}"
-        except ImportError:
-            pass  # smart_trader not available, continue
         
         score = opportunity.get('score', 0)
         spread = opportunity.get('spread', 0)
         
+        # Check minimum score
         if score < config.trading.min_score_to_trade:
             return False, f"Score {score} below threshold {config.trading.min_score_to_trade}"
         
+        # Check minimum spread for cross-platform arbitrage
         if spread > 0 and spread < config.trading.min_spread_to_trade:
             return False, f"Spread {spread:.2%} below threshold {config.trading.min_spread_to_trade:.2%}"
         
+        # Check daily limits (only enforce in real trading mode, not dry run)
         trade_amount = min(config.trading.max_trade_amount, opportunity.get('suggested_amount', 10.0))
         if not config.trading.dry_run:
             if not self.daily_stats.can_trade(trade_amount, config.trading.max_daily_exposure):
@@ -173,11 +180,20 @@ class PolymarketTrader:
         return True, "All checks passed"
     
     def calculate_trade_params(self, opportunity: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Calculate optimal trade parameters based on the opportunity.
+        
+        Arbitrage logic:
+        - If Poly < Kalshi: Poly is undervalued → BUY YES on Poly (will converge up)
+        - If Poly > Kalshi: Poly is overvalued → BUY NO on Poly (will converge down)
+        - No Kalshi data: Use sentiment/momentum signals
+        """
         poly_yes = opportunity.get('yes', 0)
         poly_no = opportunity.get('no', 1 - poly_yes)
         kalshi_price = opportunity.get('k_yes')
         spread = opportunity.get('spread', 0)
         
+        # Determine side and outcome based on cross-platform arbitrage
         side = TradeSide.BUY
         outcome = "YES"
         target_price = poly_yes
@@ -185,26 +201,31 @@ class PolymarketTrader:
         
         if kalshi_price and spread > 0.02:
             if poly_yes < kalshi_price:
+                # Polymarket is cheaper for YES → BUY YES (undervalued)
                 side = TradeSide.BUY
                 outcome = "YES"
                 target_price = poly_yes
-                confidence_boost = spread * 5
+                confidence_boost = spread * 5  # Higher spread = higher confidence
                 log.debug(f"Arbitrage signal: BUY YES (Poly {poly_yes:.2f} < Kalshi {kalshi_price:.2f})")
             else:
+                # Polymarket YES is more expensive → BUY NO (YES is overvalued)
                 side = TradeSide.BUY
                 outcome = "NO"
                 target_price = poly_no
                 confidence_boost = spread * 5
                 log.debug(f"Arbitrage signal: BUY NO (Poly YES {poly_yes:.2f} > Kalshi {kalshi_price:.2f})")
         else:
+            # No arbitrage signal, use other indicators
             sentiment = opportunity.get('sentiment', 'NEUTRAL')
             social_sentiment = opportunity.get('social_sentiment', 0)
             has_momentum = opportunity.get('has_momentum', False)
             
+            # Favor YES if bullish signals, NO if bearish
             if sentiment == 'BEARISH' or social_sentiment < -0.3:
                 outcome = "NO"
                 target_price = poly_no
             elif poly_yes > 0.85:
+                # High probability market - be careful
                 outcome = "YES" if sentiment == 'BULLISH' else "NO"
                 target_price = poly_yes if outcome == "YES" else poly_no
             else:
@@ -214,20 +235,24 @@ class PolymarketTrader:
             if has_momentum:
                 confidence_boost = 0.1
         
+        # Calculate position size using Kelly Criterion
         try:
-            portfolio_balance = 100.0
+            # Get current portfolio balance for Kelly calculation
+            portfolio_balance = 100.0  # Default for simulation
             if config.trading.dry_run:
                 from simulation_tracker import simulation_tracker
                 stats = simulation_tracker.get_stats()
-                portfolio_balance = stats.get('total_invested', 100) + 100
+                portfolio_balance = stats.get('total_invested', 100) + 100  # Base + invested
             
             kelly_amount, kelly_meta = risk_manager.calculate_position_size(
                 opportunity, 
                 portfolio_balance
             )
             
+            # Kelly returns MIN_BET_SIZE (1.0) for bad bets, 0 should never happen
             amount = kelly_amount if kelly_amount > 0 else 2.0
             
+            # Log the sizing decision
             win_prob = kelly_meta.get('estimated_win_prob', 0)
             kelly_raw = kelly_meta.get('kelly_raw', 0)
             log.debug(f"Kelly sizing: ${amount:.2f} (win_prob: {win_prob:.1%}, raw_kelly: {kelly_raw:.3f})")
@@ -235,42 +260,51 @@ class PolymarketTrader:
             log.debug(f"Kelly calculation failed, using default: {e}")
             amount = 2.0
         
-        limit_discount = 0.015
+        # Calculate limit price (1-2% below market for buys)
+        # This helps us get better fills
+        limit_discount = 0.015  # 1.5% below market
         if target_price > 0.10:
             limit_price = round(target_price * (1 - limit_discount), 4)
         else:
+            # For very low prices, use smaller absolute discount
             limit_price = round(target_price - 0.005, 4)
         
-        limit_price = max(0.001, limit_price)
+        limit_price = max(0.001, limit_price)  # Ensure positive
         
         return {
             'side': side,
             'outcome': outcome,
             'price': target_price,
             'limit_price': limit_price,
-            'amount': max(1.0, round(amount, 2)),
+            'amount': max(1.0, round(amount, 2)),  # Minimum $1
             'token_id': opportunity.get('token_id'),
             'condition_id': opportunity.get('condition_id'),
             'arbitrage_signal': spread > 0.02 and kalshi_price is not None,
-            'order_strategy': 'limit',
+            'order_strategy': 'limit',  # Use limit orders by default
         }
     
     def execute_trade(self, opportunity: Dict[str, Any]) -> TradeResult:
+        """
+        Execute a trade for the given opportunity.
+        """
         market_title = opportunity.get('question', 'Unknown')[:50]
         
+        # Check if we should trade
         should, reason = self.should_trade(opportunity)
         if not should:
             log.info(f"Skipping trade: {reason} | Market: {market_title}")
             return TradeResult(
                 success=False,
-                side=TradeSide.BUY,
+                side=TradeSide.BUY,  # Default side to avoid None errors
                 error=reason,
                 market=market_title,
                 is_dry_run=config.trading.dry_run
             )
         
+        # Calculate trade parameters
         params = self.calculate_trade_params(opportunity)
         
+        # Dry run mode - simulate the trade
         if config.trading.dry_run:
             outcome = params.get('outcome', 'YES')
             arb_tag = " [ARB]" if params.get('arbitrage_signal') else ""
@@ -281,8 +315,10 @@ class PolymarketTrader:
             self.daily_stats.trades_count += 1
             self.daily_stats.total_exposure += params['amount']
             
+            # Record in simulation tracker (use limit price as entry)
             try:
                 from simulation_tracker import simulation_tracker
+                # Modify opportunity to use limit price
                 opp_copy = opportunity.copy()
                 if outcome == "YES":
                     opp_copy['yes'] = limit_price
@@ -294,14 +330,6 @@ class PolymarketTrader:
                     side=params['side'].value,
                     outcome=outcome
                 )
-                
-                # SMART TRADER: Record position to prevent duplicates
-                try:
-                    from smart_trader import smart_trader
-                    smart_trader.record_trade(opportunity, outcome)
-                except ImportError:
-                    pass
-                    
             except Exception as e:
                 log.debug(f"Could not record simulation: {e}")
             
@@ -314,6 +342,7 @@ class PolymarketTrader:
                 is_dry_run=True
             )
         
+        # Real trade execution
         try:
             token_id = params.get('token_id')
             if not token_id:
@@ -323,6 +352,7 @@ class PolymarketTrader:
                     market=market_title
                 )
             
+            # Create the order
             order_args = OrderArgs(
                 token_id=token_id,
                 price=params['price'],
@@ -330,6 +360,7 @@ class PolymarketTrader:
                 side=params['side'].value,
             )
             
+            # Submit the order
             log.info(f"Submitting order: {params['side'].value} ${params['amount']:.2f} @ {params['price']:.4f}")
             
             signed_order = self.client.create_order(order_args)
@@ -337,6 +368,7 @@ class PolymarketTrader:
             
             order_id = response.get('orderID')
             
+            # Update stats
             self.daily_stats.trades_count += 1
             self.daily_stats.successful_trades += 1
             self.daily_stats.total_exposure += params['amount']
@@ -363,6 +395,7 @@ class PolymarketTrader:
             )
     
     def get_open_positions(self) -> list:
+        """Get current open positions."""
         if not self.is_ready:
             return []
         
@@ -374,6 +407,7 @@ class PolymarketTrader:
             return []
     
     def get_order_history(self, limit: int = 10) -> list:
+        """Get recent order history."""
         if not self.is_ready:
             return []
         

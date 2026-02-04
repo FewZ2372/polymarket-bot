@@ -251,103 +251,18 @@ def calculate_inefficiency_score(
     return max(0, min(100, score))
 
 
-def calculate_movement_potential(market: Dict, days_to_resolution: float, yes_price: float) -> float:
+def get_top_markets(limit: int = 15, sentiment_analyzer=None) -> List[Dict[str, Any]]:
     """
-    Calcula el potencial de movimiento de precio.
-    
-    Factores que aumentan movimiento:
-    1. Cercanía a resolución (más cerca = movimientos más bruscos)
-    2. Precio cerca de 50% (más incertidumbre = más potencial)
-    3. Volatilidad reciente alta (mercado activo)
-    4. Tipo de mercado (deportes mueven rápido, política lento)
-    
-    Returns: 0-100 score de potencial de movimiento
-    """
-    score = 0
-    
-    # 1. Cercanía a resolución (0-35 puntos)
-    # Más cerca = mejor para swing trading
-    if days_to_resolution <= 1:
-        score += 35  # Hoy/mañana - movimiento inminente
-    elif days_to_resolution <= 3:
-        score += 30  # Esta semana
-    elif days_to_resolution <= 7:
-        score += 25
-    elif days_to_resolution <= 14:
-        score += 20
-    elif days_to_resolution <= 30:
-        score += 15
-    elif days_to_resolution <= 60:
-        score += 5
-    # > 60 días = 0 puntos (muy lejos)
-    
-    # 2. Precio cerca de 50% = más potencial de swing (0-30 puntos)
-    # Precios extremos (5% o 95%) tienen poco upside
-    distance_from_50 = abs(yes_price - 0.5)
-    if distance_from_50 <= 0.15:  # 35%-65%
-        score += 30  # Máxima incertidumbre
-    elif distance_from_50 <= 0.25:  # 25%-75%
-        score += 20
-    elif distance_from_50 <= 0.35:  # 15%-85%
-        score += 10
-    # > 85% o < 15% = poco potencial de movimiento significativo
-    
-    # 3. Volatilidad reciente (0-20 puntos)
-    # Si ya se está moviendo, puede seguir moviéndose
-    price_change_24h = abs(float(market.get('oneDayPriceChange', 0) or 0))
-    if price_change_24h > 0.10:
-        score += 20  # >10% en 24h = muy activo
-    elif price_change_24h > 0.05:
-        score += 15
-    elif price_change_24h > 0.02:
-        score += 10
-    elif price_change_24h > 0.01:
-        score += 5
-    
-    # 4. Tipo de mercado (0-15 puntos)
-    question = market.get('question', '').lower()
-    category = market.get('category', '').lower()
-    
-    # Deportes = resolución rápida y clara
-    if any(sport in question or sport in category for sport in ['nba', 'nfl', 'nhl', 'mlb', 'soccer', 'football', 'basketball']):
-        score += 15
-    # Crypto = volátil
-    elif any(crypto in question for crypto in ['bitcoin', 'btc', 'ethereum', 'eth', 'crypto']):
-        score += 12
-    # Eventos con fecha fija
-    elif any(event in question for event in ['earnings', 'report', 'announce', 'release']):
-        score += 10
-    # Política = movimientos en eventos específicos
-    elif any(pol in question for pol in ['trump', 'biden', 'election', 'vote']):
-        score += 8
-    
-    return min(100, score)
-
-
-def get_top_markets(
-    limit: int = 75, 
-    sentiment_analyzer=None,
-    max_days_to_resolution: int = 30,  # NEW: Filter by resolution date
-    include_all_timeframes: bool = False,  # NEW: Override filter for analysis
-) -> List[Dict[str, Any]]:
-    """
-    Obtiene los top mercados priorizando:
-    1. Mercados de CORTO PLAZO (< 30 días por defecto)
-    2. Alto potencial de movimiento
-    3. Volumen suficiente para liquidez
-    
-    Cambios vs versión anterior:
-    - Descarga más mercados (500 vs 200)
-    - FILTRA por fecha de resolución primero
-    - Ordena por potencial de movimiento, no solo volumen
+    Obtiene los top mercados basados en el Inefficiency Score.
+    Retorna una lista de diccionarios con la información del mercado.
     """
     url = "https://gamma-api.polymarket.com/markets"
-    
-    # Fetch more markets to have better selection after filtering
     params = {
         "active": "true",
         "closed": "false",
-        "limit": 500  # Increased from 200
+        "order": "volume24hr",
+        "ascending": "false",
+        "limit": 50 
     }
     
     try:
@@ -355,41 +270,10 @@ def get_top_markets(
         response.raise_for_status()
         markets = response.json()
         
-        log.info(f"Fetched {len(markets)} raw markets from Polymarket")
-        
         analyzed_markets = []
         fetch_kalshi_markets()  # Pre-cache
         
-        now = datetime.now()
-        short_term_count = 0
-        filtered_count = 0
-        
         for market in markets:
-            # Parse end date FIRST - this is the key filter
-            end_date = None
-            days_to_resolution = 999
-            
-            if market.get('endDate'):
-                try:
-                    end_date_str = market['endDate'].replace('Z', '+00:00')
-                    end_date = datetime.fromisoformat(end_date_str)
-                    if end_date.tzinfo is not None:
-                        end_date = end_date.replace(tzinfo=None)
-                    days_to_resolution = (end_date - now).total_seconds() / 86400
-                except Exception:
-                    pass
-            
-            # FILTER: Skip markets that resolve too far in the future
-            if not include_all_timeframes:
-                if days_to_resolution > max_days_to_resolution:
-                    filtered_count += 1
-                    continue
-                if days_to_resolution < 0:  # Already resolved
-                    filtered_count += 1
-                    continue
-            
-            short_term_count += 1
-            
             # Parse prices
             prices_str = market.get('outcomePrices', '[]')
             try:
@@ -399,10 +283,6 @@ def get_top_markets(
             except:
                 yes_price = 0
                 no_price = 0
-            
-            # Skip invalid prices
-            if yes_price <= 0 or yes_price >= 1:
-                continue
             
             # Get Kalshi comparison
             k_yes, k_title = fetch_kalshi_price(market)
@@ -425,54 +305,27 @@ def get_top_markets(
                 except Exception as e:
                     log.debug(f"Sentiment analysis failed: {e}")
             
-            # Calculate scores
-            inefficiency_score = calculate_inefficiency_score(market, spread_pct=spread, sentiment_data=sentiment_data)
-            movement_potential = calculate_movement_potential(market, days_to_resolution, yes_price)
-            
-            # Combined score: 50% inefficiency + 50% movement potential
-            # This balances "good opportunity" with "will actually move"
-            combined_score = int(inefficiency_score * 0.5 + movement_potential * 0.5)
-            
-            # Bonus for very short-term markets (< 7 days)
-            if days_to_resolution <= 7:
-                combined_score = min(100, combined_score + 10)
-            
-            # Get token_id safely
-            clob_ids = market.get('clobTokenIds') or []
-            token_id = clob_ids[0] if clob_ids else None
-            
-            # Volume for liquidity check
-            volume = float(market.get('volume24hr', 0) or market.get('volume', 0) or 0)
+            # Calculate score
+            score = calculate_inefficiency_score(market, spread_pct=spread, sentiment_data=sentiment_data)
             
             analyzed_markets.append({
                 'question': market.get('question', 'N/A'),
                 'slug': market.get('slug', ''),
                 'condition_id': market.get('conditionId'),
-                'token_id': token_id,
-                'vol24h': volume,
+                'token_id': market.get('clobTokenIds', [None])[0] if market.get('clobTokenIds') else None,
+                'vol24h': float(market.get('volume24hr', 0)),
                 'yes': yes_price,
                 'no': no_price,
-                'score': combined_score,  # NEW: Combined score
-                'inefficiency_score': inefficiency_score,
-                'movement_potential': movement_potential,
-                'days_to_resolution': days_to_resolution,
+                'score': score,
                 'category': market.get('category', 'Other'),
                 'k_yes': k_yes,
                 'k_title': k_title,
                 'spread': spread,
                 'sentiment': sentiment_data.get('sentiment') if sentiment_data else None,
                 'buzz_score': sentiment_data.get('buzz_score') if sentiment_data else None,
-                'end_date': end_date,
-                'oneHourPriceChange': float(market.get('oneHourPriceChange', 0) or 0),
-                'oneDayPriceChange': float(market.get('oneDayPriceChange', 0) or 0),
             })
 
-        # Sort by combined score (which includes movement potential)
         analyzed_markets.sort(key=lambda x: x['score'], reverse=True)
-        
-        log.info(f"After filtering: {len(analyzed_markets)} markets (filtered {filtered_count} long-term)")
-        log.info(f"Short-term markets (<{max_days_to_resolution}d): {short_term_count}")
-        
         return analyzed_markets[:limit]
             
     except Exception as e:
@@ -482,27 +335,23 @@ def get_top_markets(
 
 def print_market_report(markets: List[Dict[str, Any]]):
     """Print a formatted market report to the console."""
-    print(f"\n{'='*100}")
-    print(f" POLYMARKET SCANNER REPORT - Short Term Focus")
+    print(f"\n{'='*90}")
+    print(f" POLYMARKET SCANNER REPORT")
     print(f" Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"{'='*100}\n")
+    print(f"{'='*90}\n")
     
-    print(f"{'SCORE':<6} | {'DAYS':<5} | {'MARKET':<40} | {'PRICE':<6} | {'MOVE%':<6} | {'VOL':<10}")
-    print("-" * 100)
+    print(f"{'SCORE':<7} | {'MARKET':<45} | {'POLY':<6} | {'KALSHI':<6} | {'SPREAD':<6}")
+    print("-" * 90)
     
-    for m in markets[:20]: 
-        days = m.get('days_to_resolution', 999)
-        days_str = f"{days:.0f}d" if days < 999 else "N/A"
-        movement = m.get('movement_potential', 0)
-        vol = m.get('vol24h', 0)
-        vol_str = f"${vol/1000:.0f}k" if vol >= 1000 else f"${vol:.0f}"
+    for m in markets[:15]: 
+        k_val = f"{m['k_yes']:.2f}" if m['k_yes'] else "N/A"
+        s_val = f"{m['spread']*100:.1f}%" if m['k_yes'] else "N/A"
         
-        print(f"{m['score']:<6} | {days_str:<5} | {m['question'][:38]:<40} | {m['yes']:<5.0%} | {movement:<5} | {vol_str:<10}")
+        print(f"{m['score']:<7} | {m['question'][:43]:<45} | {m['yes']:<6.2f} | {k_val:<6} | {s_val:<6}")
 
-    print(f"\n{'='*100}")
-    print(" SCORE = 50% Inefficiency + 50% Movement Potential + Bonus for <7 days")
-    print(" Movement factors: Days to resolution, Price near 50%, Volatility, Market type")
-    print(f"{'='*100}\n")
+    print(f"\n{'='*90}")
+    print(" Score 100 = Spread > 5%. Otherwise: High Volume + Low Volatility + Technical Category")
+    print(f"{'='*90}\n")
 
 
 if __name__ == "__main__":

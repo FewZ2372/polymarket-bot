@@ -26,7 +26,7 @@ class WalletConfig(BaseModel):
 
 class TradingConfig(BaseModel):
     """Trading limits and parameters."""
-    max_trade_amount: float = Field(default=3.0, ge=0)  # Smaller trades for high freq
+    max_trade_amount: float = Field(default=10.0, ge=0)
     max_daily_exposure: float = Field(default=100.0, ge=0)
     min_score_to_trade: int = Field(default=85, ge=0, le=100)
     min_spread_to_trade: float = Field(default=0.05, ge=0, le=1)
@@ -64,7 +64,7 @@ class Config(BaseModel):
     alerts: AlertConfig
     server: ServerConfig
     polymarket_api: PolymarketAPIConfig
-    scan_interval: int = Field(default=300)  # 5 min for high freq (was 10 min)
+    scan_interval: int = Field(default=600)
     
     @classmethod
     def from_env(cls) -> "Config":

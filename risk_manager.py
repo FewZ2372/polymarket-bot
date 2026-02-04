@@ -31,7 +31,7 @@ class RiskState:
     pause_until: Optional[str] = None
     pause_reason: Optional[str] = None
     current_drawdown_pct: float = 0.0
-    peak_balance: float = 0.0  # Start at 0, will be set by first update_balance call
+    peak_balance: float = 10.0
     daily_pnl_history: List[Dict] = field(default_factory=list)
     
 
@@ -43,26 +43,24 @@ class RiskManager:
     3. Drawdown protection
     """
     
-    # === MARKET QUALITY FILTERS (HIGH FREQUENCY) ===
-    # VERY LOW thresholds - we want MAXIMUM VOLUME
-    # Protection: small bets + diversification + short resolution
-    MIN_LIQUIDITY = 0  # No minimum - we trade tiny amounts
-    MIN_VOLUME_24H = 0  # No minimum
-    MAX_SPREAD_PCT = 0.50  # 50% spread OK for small bets
-    MAX_DAYS_TO_RESOLUTION = 30  # 1 month max
-    MIN_PRICE = 0.02  # Don't buy below 2 cents
-    MAX_PRICE = 0.50  # 50 cents max
+    # === MARKET QUALITY FILTERS ===
+    MIN_LIQUIDITY = 50000  # $50k minimum
+    MIN_VOLUME_24H = 10000  # $10k minimum daily volume
+    MAX_SPREAD_PCT = 0.05  # 5% max bid-ask spread
+    MAX_DAYS_TO_RESOLUTION = 30  # Prefer markets resolving soon
+    MIN_PRICE = 0.03  # Don't buy below 3 cents (too speculative)
+    MAX_PRICE = 0.97  # Don't buy above 97 cents (not enough upside)
     
     # === DRAWDOWN LIMITS ===
     DAILY_LOSS_LIMIT = -0.15  # -15% daily loss → pause 24h
     WEEKLY_LOSS_LIMIT = -0.25  # -25% weekly loss → pause 1 week
     MAX_DRAWDOWN = -0.35  # -35% from peak → pause indefinitely
     
-    # === KELLY CRITERION PARAMETERS (HIGH FREQUENCY) ===
-    KELLY_FRACTION = 0.15  # Use 15% of Kelly (more conservative for high freq)
-    MIN_BET_SIZE = 0.50  # Minimum $0.50 (smaller trades)
-    MAX_BET_SIZE = 3.0  # Maximum $3 per trade (was $10)
-    MAX_PORTFOLIO_PCT = 0.05  # Max 5% of portfolio in one trade (was 10%)
+    # === KELLY CRITERION PARAMETERS ===
+    KELLY_FRACTION = 0.25  # Use 25% of Kelly (more conservative)
+    MIN_BET_SIZE = 1.0  # Minimum $1
+    MAX_BET_SIZE = 10.0  # Maximum $10 per trade
+    MAX_PORTFOLIO_PCT = 0.10  # Max 10% of portfolio in one trade
     
     def __init__(self, state_file: str = "risk_state.json"):
         self.state_file = Path(state_file)
@@ -256,33 +254,15 @@ class RiskManager:
     
     def update_balance(self, current_balance: float):
         """Update balance tracking for drawdown calculation."""
-        # First time initialization: set peak to current balance
-        if self.state.peak_balance <= 0:
-            log.info(f"[RISK] Initializing peak balance to {current_balance:.2f}")
-            self.state.peak_balance = current_balance
-            self.state.current_drawdown_pct = 0.0
-            self._save_state()
-            return
-        
-        # Sanity check: if peak is way higher than current (>2x), reset it
-        # This handles cases where peak was set incorrectly (e.g., from starting_balance)
-        if self.state.peak_balance > current_balance * 2 and current_balance > 0:
-            log.info(f"[RISK] Resetting peak balance from {self.state.peak_balance:.2f} to {current_balance:.2f}")
-            self.state.peak_balance = current_balance
-            self.state.current_drawdown_pct = 0.0
-            self.state.is_trading_allowed = True
-            self.state.pause_reason = None
-            self._save_state()
-            return
-        
-        # Update peak balance (high water mark)
+        # Update peak balance
         if current_balance > self.state.peak_balance:
             self.state.peak_balance = current_balance
         
-        # Calculate current drawdown from peak
-        self.state.current_drawdown_pct = (
-            current_balance - self.state.peak_balance
-        ) / self.state.peak_balance
+        # Calculate current drawdown
+        if self.state.peak_balance > 0:
+            self.state.current_drawdown_pct = (
+                current_balance - self.state.peak_balance
+            ) / self.state.peak_balance
         
         self._save_state()
     
