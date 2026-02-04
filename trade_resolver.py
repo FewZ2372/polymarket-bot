@@ -48,7 +48,7 @@ class TradeResolver:
     # Initial targets are optimistic, then we accept smaller gains
     THRESHOLDS = {
         'low': {      # Entry < 0.30
-            'take_profit': 0.45,  # +45% initial target
+            'take_profit': 0.50,  # +50% initial target
             'stop_loss': -0.20,   # -20%
         },
         'medium': {   # Entry 0.30 - 0.70

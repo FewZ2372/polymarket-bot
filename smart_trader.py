@@ -229,7 +229,7 @@ class SmartTradeResolver:
     # The main exit is market resolution, but we can take profit early
     # These match trade_resolver.py initial targets (before time decay)
     TAKE_PROFIT_SETTINGS = {
-        'low': 0.45,      # +45% for cheap markets (high upside potential)
+        'low': 0.50,      # +50% for cheap markets (high upside potential)
         'medium': 0.25,   # +25% for medium markets
         'high': 0.10,     # +10% for expensive markets
     }
