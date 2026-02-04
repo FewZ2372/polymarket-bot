@@ -115,7 +115,7 @@ class SimulationTracker:
         In simulation mode, we track ALL opportunities (no balance limit).
         """
         entry_price = opportunity.get('yes', 0) if outcome == "YES" else opportunity.get('no', 0)
-        amount = 5.0  # Increased to $5 per trade (was $2)
+        amount = 2.0  # $2 per trade - original v22 value
         
         # Avoid division by zero and unrealistic prices
         if entry_price <= 0.001:

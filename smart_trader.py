@@ -36,8 +36,8 @@ class SmartTrader:
     - Small position sizes, high volume
     """
     
-    # Allow only 1 trade per market - DIVERSIFY across many markets
-    MAX_TRADES_PER_MARKET = 1
+    # Allow multiple trades per market for high-frequency strategy
+    MAX_TRADES_PER_MARKET = 10
     
     # Maximum days until market resolution - SHORT TERM ONLY
     MAX_DAYS_TO_EXPIRY = 21  # 3 weeks max
@@ -227,9 +227,10 @@ class SmartTradeResolver:
     
     # Take profit settings - OPTIONAL early exit if big gains
     # The main exit is market resolution, but we can take profit early
+    # These match trade_resolver.py initial targets (before time decay)
     TAKE_PROFIT_SETTINGS = {
-        'low': 0.25,      # +25% for cheap markets (high upside potential)
-        'medium': 0.15,   # +15% for medium markets
+        'low': 0.45,      # +45% for cheap markets (high upside potential)
+        'medium': 0.25,   # +25% for medium markets
         'high': 0.10,     # +10% for expensive markets
     }
     
