@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "saved_at": "2026-02-05T21:41:06.932637",
+  "initial_capital": 150.0,
+  "cash": 150.0,
+  "trade_count": 0,
+  "wins": 0,
+  "losses": 0,
+  "total_pnl": 0.0,
+  "total_fees": 0.0,
+  "total_slippage_cost": 0.0,
+  "total_gas": 0.0,
+  "failed_trades": 0,
+  "started_at": "2026-02-05T21:35:55.857951",
+  "positions": {},
+  "closed_positions": []
+}

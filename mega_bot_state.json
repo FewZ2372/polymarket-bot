@@ -1,0 +1,3416 @@
+{
+  "positions": [
+    {
+      "id": "trade_1",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13883333333333334,
+      "amount": 2.0,
+      "shares": 14.405762304921968,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:42:28.180202",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.1464585834333732,
+      "hours_open": 2.996931701111111,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_2",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:42:28.180202",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.996931701111111,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_3",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:42:28.180202",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.996931701111111,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_4",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:42:28.180202",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.996931701111111,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_5",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:42:28.181198",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.996931424444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_6",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.14049999999999999,
+      "amount": 2.0,
+      "shares": 14.23487544483986,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:45:40.042515",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.1684460260972713,
+      "hours_open": 2.9436366141666666,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_7",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:45:40.042515",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.9436366141666666,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_8",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:45:40.042515",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.9436366141666666,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_9",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:45:40.042515",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.9436366141666666,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_10",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:45:40.042515",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.9436366141666666,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_11",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.14049999999999999,
+      "amount": 2.0,
+      "shares": 14.23487544483986,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:48:52.978099",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.1684460260972713,
+      "hours_open": 2.8900433963888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_12",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:48:52.978099",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.8900433963888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_13",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:48:52.978099",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.8900433963888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_14",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:48:52.978099",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.8900433963888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_15",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:48:52.978099",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.8900433963888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_16",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.14049999999999999,
+      "amount": 2.0,
+      "shares": 14.23487544483986,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:52:06.050347",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.1684460260972713,
+      "hours_open": 2.836412216388889,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_17",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:52:06.050347",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.836412216388889,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_18",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:52:06.051343",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.8364119397222223,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_19",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:52:06.051343",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.8364119397222223,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_20",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:52:06.051343",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.8364119397222223,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_21",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13716666666666666,
+      "amount": 2.0,
+      "shares": 14.580801944106927,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:55:19.331951",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.12393681652490858,
+      "hours_open": 2.7827228819444443,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_22",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:55:19.332948",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.782722605,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_23",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:55:19.332948",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.782722605,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_24",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:55:19.332948",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.782722605,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_25",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:55:19.332948",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.782722605,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_26",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13649999999999998,
+      "amount": 2.0,
+      "shares": 14.652014652014653,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T18:58:31.382811",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.11477411477411434,
+      "hours_open": 2.729375420833333,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_27",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T18:58:31.383808",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.729375143888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_28",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T18:58:31.383808",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.729375143888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_29",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T18:58:31.383808",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.729375143888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_30",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T18:58:31.383808",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.729375143888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_31",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13649999999999998,
+      "amount": 2.0,
+      "shares": 14.652014652014653,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T19:01:44.535591",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.11477411477411434,
+      "hours_open": 2.6757218708333332,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_32",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T19:01:44.535591",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.6757218708333332,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_33",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T19:01:44.535591",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.6757218708333332,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_34",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T19:01:44.535591",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.6757218708333332,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_35",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T19:01:44.535591",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.6757218708333332,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_36",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13749999999999998,
+      "amount": 2.0,
+      "shares": 14.545454545454547,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T19:04:56.250140",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.12848484848484806,
+      "hours_open": 2.622467829444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_37",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T19:04:56.250140",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.622467829444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_38",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T19:04:56.250140",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.622467829444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_39",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.15,
+      "amount": 2.0,
+      "shares": 13.333333333333334,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T19:04:56.250140",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.03333333333333337,
+      "hours_open": 2.622467829444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_40",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T19:04:56.250140",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.622467829444444,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_41",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13749999999999998,
+      "amount": 2.0,
+      "shares": 14.545454545454547,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T19:08:10.287712",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.12848484848484806,
+      "hours_open": 2.568568503888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_42",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T19:08:10.287712",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.568568503888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_43",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T19:08:10.287712",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.568568503888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_44",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.1475,
+      "amount": 2.0,
+      "shares": 13.559322033898306,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T19:08:10.287712",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0677966101694916,
+      "hours_open": 2.568568503888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_45",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T19:08:10.287712",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.568568503888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_46",
+      "market_id": "16167",
+      "market_question": "[MULTI-ARB] MicroStrategy sells any Bitcoin by ___ ?",
+      "side": "YES",
+      "entry_price": 0.13749999999999998,
+      "amount": 2.0,
+      "shares": 14.545454545454547,
+      "current_price": 0.12866666666666668,
+      "entry_time": "2026-02-05T19:11:22.491844",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.12848484848484806,
+      "hours_open": 2.515178467222222,
+      "extra_data": {
+        "individual_market_ids": [
+          "516926",
+          "824952",
+          "692250",
+          "692258"
+        ],
+        "individual_condition_ids": [
+          "0x19ee98e348c0ccb341d1b9566fa14521566e9b2ea7aed34dc407a0ec56be36a2",
+          "0x8213d395e079614d6c4d7f4cbb9be9337ab51648a21cc2a334ae8f1966d164b4",
+          "0x9a4db724246b51cbfbc8000dbbd6b54d72b057767c3690e63d940b26d78c6cb0",
+          "0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_47",
+      "market_id": "17858",
+      "market_question": "[MULTI-ARB] Ukraine recognizes Russian sovereignty over its territory by",
+      "side": "YES",
+      "entry_price": 0.1275,
+      "amount": 2.0,
+      "shares": 15.686274509803921,
+      "current_price": 0.1325,
+      "entry_time": "2026-02-05T19:11:22.491844",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.07843137254901968,
+      "hours_open": 2.515178467222222,
+      "extra_data": {
+        "individual_market_ids": [
+          "522057",
+          "610379",
+          "1323364"
+        ],
+        "individual_condition_ids": [
+          "0x591f785022238c7ea2563553d93c024e451a18ea74d9bbd79a6126c0267c588a",
+          "0xbca45186bc1f8ad2912f79f22c6e37c0946f6619bbfbd0f97ad93d9b525a6293",
+          "0x3e4e5225054ad5168e0b249164f643453ba97a8947f84d7aacb4c768275d48e9"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_48",
+      "market_id": "18558",
+      "market_question": "[MULTI-ARB] Ukraine election called by...?",
+      "side": "YES",
+      "entry_price": 0.10999999999999999,
+      "amount": 2.0,
+      "shares": 18.181818181818183,
+      "current_price": 0.10999999999999999,
+      "entry_time": "2026-02-05T19:11:22.491844",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.515178467222222,
+      "extra_data": {
+        "individual_market_ids": [
+          "523343",
+          "610380",
+          "734115"
+        ],
+        "individual_condition_ids": [
+          "0xf3d74c153a35436ff82a5f78200104975c5841140ace763f2954adb340cca511",
+          "0x707125b175feb87a7d28c1e3b0e8e834f11c0dff65edac8c4fe5d1e12bf8fc33",
+          "0xdab71ad1d7d7661435f2556eb8e29473d322d9d8af2705a9732c4872629de090"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_49",
+      "market_id": "18576",
+      "market_question": "[MULTI-ARB] Ukraine election held by...?",
+      "side": "YES",
+      "entry_price": 0.1475,
+      "amount": 2.0,
+      "shares": 13.559322033898306,
+      "current_price": 0.1525,
+      "entry_time": "2026-02-05T19:11:22.491844",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0677966101694916,
+      "hours_open": 2.515178467222222,
+      "extra_data": {
+        "individual_market_ids": [
+          "523420",
+          "610381",
+          "677358"
+        ],
+        "individual_condition_ids": [
+          "0x9388fd0115ced362ce81ba2d3433903f2ae5c78263355d7038ae74ac96c85ac1",
+          "0x24caca44a9ec5c344bd5f57c547f466dc0452e147d264a626afbffe3b5a0b55f",
+          "0xe29c8bf245ab35d14c722503922e6086da7dcfb08f357d1e8012331573d9e633"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_50",
+      "market_id": "22448",
+      "market_question": "[MULTI-ARB] Taylor Swift pregnant in 2025?",
+      "side": "YES",
+      "entry_price": 0.18675,
+      "amount": 2.0,
+      "shares": 10.7095046854083,
+      "current_price": 0.18425,
+      "entry_time": "2026-02-05T19:11:22.491844",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.026773761713520774,
+      "hours_open": 2.515178467222222,
+      "extra_data": {
+        "individual_market_ids": [
+          "535013",
+          "1048198",
+          "1048199"
+        ],
+        "individual_condition_ids": [
+          "0xf4f51e9e4e8439e32f64dc0e659828af7564f9cbc323d4f7442f2c590a2ea07d",
+          "0x1ba46d242ac8b0cd6abc243bdd76630bbb7fdbbd380c766ae569bc2cc42372b2",
+          "0x0803b42cec5723f301f77f3ea818fcb393eb58b9694096cab2d4f8b81b4a2bdf"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_51",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:14:36.779303",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.461209728611111,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_52",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:14:36.779303",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.461209728611111,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_53",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.33475,
+      "amount": 2.0,
+      "shares": 5.974607916355489,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:14:36.779303",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.0014936519790887078,
+      "hours_open": 2.461209728611111,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_54",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.49,
+      "amount": 2.0,
+      "shares": 4.081632653061225,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:14:36.779303",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.020408163265305916,
+      "hours_open": 2.461209728611111,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_55",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:14:36.779303",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.461209728611111,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_56",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:17:48.879542",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.4078485511111114,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_57",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:17:48.879542",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.4078485511111114,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_58",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.33525,
+      "amount": 2.0,
+      "shares": 5.965697240865026,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:17:48.879542",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.004474272930648608,
+      "hours_open": 2.4078485511111114,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_59",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:17:48.879542",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.4078485511111114,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_60",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:17:48.879542",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.4078485511111114,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_61",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:21:01.529900",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.354334562777778,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_62",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:21:01.529900",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.354334562777778,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_63",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.33525,
+      "amount": 2.0,
+      "shares": 5.965697240865026,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:21:01.529900",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.004474272930648608,
+      "hours_open": 2.354334562777778,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_64",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:21:01.529900",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.354334562777778,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_65",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:21:01.530896",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.354334286111111,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_66",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:24:12.806819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.3012020852777777,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_67",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:24:12.806819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.3012020852777777,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_68",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:24:12.806819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.3012020852777777,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_69",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:24:12.806819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.3012020852777777,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_70",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:24:12.806819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.3012020852777777,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_71",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:27:26.245819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.247469029722222,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_72",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:27:26.245819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.247469029722222,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_73",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:27:26.245819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.247469029722222,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_74",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:27:26.245819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.247469029722222,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_75",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:27:26.245819",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.247469029722222,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_76",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20566666666666666,
+      "amount": 2.0,
+      "shares": 9.724473257698541,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:30:37.849079",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.1942459019444445,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_77",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3983333333333333,
+      "amount": 2.0,
+      "shares": 5.02092050209205,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:30:37.849079",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.008926080892608592,
+      "hours_open": 2.1942459019444445,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_78",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:30:37.849079",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.1942459019444445,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_79",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:30:37.849079",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.1942459019444445,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_80",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:30:37.849079",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.1942459019444445,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_81",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20583333333333334,
+      "amount": 2.0,
+      "shares": 9.7165991902834,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:33:51.235485",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.001619433198380658,
+      "hours_open": 2.1405274558333334,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_82",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3983333333333333,
+      "amount": 2.0,
+      "shares": 5.02092050209205,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:33:51.235485",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.008926080892608592,
+      "hours_open": 2.1405274558333334,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_83",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:33:51.235485",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.1405274558333334,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_84",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:33:51.235485",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.1405274558333334,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_85",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:33:51.235485",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.1405274558333334,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_86",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20583333333333334,
+      "amount": 2.0,
+      "shares": 9.7165991902834,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:37:03.623842",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.001619433198380658,
+      "hours_open": 2.0870862455555557,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_87",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:37:03.623842",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.0870862455555557,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_88",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:37:03.623842",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.0870862455555557,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_89",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:37:03.623842",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.0870862455555557,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_90",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:37:03.623842",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.0870862455555557,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_91",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20583333333333334,
+      "amount": 2.0,
+      "shares": 9.7165991902834,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:40:16.942903",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.001619433198380658,
+      "hours_open": 2.0333865063888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_92",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:40:16.942903",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 2.0333865063888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_93",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:40:16.942903",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.0333865063888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_94",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.48833333333333334,
+      "amount": 2.0,
+      "shares": 4.09556313993174,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:40:16.942903",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.013651877133105662,
+      "hours_open": 2.0333865063888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_95",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:40:16.942903",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 2.0333865063888887,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_96",
+      "market_id": "22527",
+      "market_question": "[MULTI-ARB] Mike Johnson out as Speaker by...?",
+      "side": "YES",
+      "entry_price": 0.20583333333333334,
+      "amount": 2.0,
+      "shares": 9.7165991902834,
+      "current_price": 0.20566666666666666,
+      "entry_time": "2026-02-05T19:43:29.228427",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.001619433198380658,
+      "hours_open": 1.9799738608333335,
+      "extra_data": {
+        "individual_market_ids": [
+          "535741",
+          "623964",
+          "813506",
+          "813505"
+        ],
+        "individual_condition_ids": [
+          "0x0bfba180a1eb8fe425e3db8cb72d2d6ea20af92baaf59f6f549d6d86eee01562",
+          "0x75792d37c6d7ad21386a8b2656786d6d5ffe377aadc9cb615721a04eab46ea62",
+          "0xfa36659c97e233539fd77a8f9525d2f1664eba5ea57c4bed72c8101ba5266d15",
+          "0xef416cfd80afbb43c7550a8fe0f950679ab3d6e60551e2a90f230106809fe2c5"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_97",
+      "market_id": "23784",
+      "market_question": "[MULTI-ARB] What will happen before GTA VI?",
+      "side": "NO",
+      "entry_price": 0.3982777777777778,
+      "amount": 2.0,
+      "shares": 5.0216208676244944,
+      "current_price": 0.4001111111111112,
+      "entry_time": "2026-02-05T19:43:29.228427",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": -0.00920630492397862,
+      "hours_open": 1.9799738608333335,
+      "extra_data": {
+        "individual_market_ids": [
+          "540816",
+          "540817",
+          "540818",
+          "540819",
+          "540820",
+          "540843",
+          "540844",
+          "573647",
+          "1117522"
+        ],
+        "individual_condition_ids": [
+          "0x9c1a953fe92c8357f1b646ba25d983aa83e90c525992db14fb726fa895cb5763",
+          "0x1fad72fae204143ff1c3035e99e7c0f65ea8d5cd9bd1070987bd1a3316f772be",
+          "0x50ddb9cd80d5c271664a2ebb7fcaed1d0a148d82c8e8d314d830f75a944c3dcc",
+          "0x32b09f6390252b37d674501527e709016d55581b2c1e544bd4b8167f5f732f4c",
+          "0x84f8b70331323c2fba97d7ceaa9a35fb645a0770d0dbff169d07f24f376766e9",
+          "0x7b49b9bacb5f435bc10f3b100ff59e2fdd346f7f92a9001881bc9825a0af0f11",
+          "0xbb57ccf5853a85487bc3d83d04d669310d28c6c810758953b9d9b91d1aee89d2",
+          "0x0ea8005efbc460378340a2f28a6d97b0d1d9d9d7fba4d16f529b8a415dca77a2",
+          "0xc829edf5ca6961e441c266546064b629c29a9313694689c0768db92810db62ff"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_98",
+      "market_id": "25009",
+      "market_question": "[MULTI-ARB] Will OpenAI launch a consumer hardware product by...?",
+      "side": "YES",
+      "entry_price": 0.3345,
+      "amount": 2.0,
+      "shares": 5.9790732436472345,
+      "current_price": 0.3345,
+      "entry_time": "2026-02-05T19:43:29.228427",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 1.9799738608333335,
+      "extra_data": {
+        "individual_market_ids": [
+          "546611",
+          "546612",
+          "676804"
+        ],
+        "individual_condition_ids": [
+          "0xd4f79cbb0e6aa3035f19ea539d7186d126b4ba6f9b6aa463ebea7d3523f8bf05",
+          "0xe9674aadfabfa7171bcee4e38b66f1a7d7e0af538d3718301e7b3cf111e9b5dd",
+          "0xf53d2cf86bf4ea3c6a0bfb739cc0dded28001dde6eee5f90b8bb6716ce33571a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_99",
+      "market_id": "25036",
+      "market_question": "[MULTI-ARB] Will Russia capture Kostyantynivka by...?",
+      "side": "NO",
+      "entry_price": 0.4916666666666667,
+      "amount": 2.0,
+      "shares": 4.067796610169491,
+      "current_price": 0.48500000000000004,
+      "entry_time": "2026-02-05T19:43:29.229424",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.027118644067796557,
+      "hours_open": 1.979973583888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "546805",
+          "546806",
+          "560560",
+          "575194",
+          "642526",
+          "898678",
+          "677361",
+          "677366",
+          "956942"
+        ],
+        "individual_condition_ids": [
+          "0x5fa63a3f820801f6bab4f95a9fc4453c004ab1881b6be2c2cb26c812f7efb997",
+          "0x1df6862b69a47872e75864cac21b9ae9ea0cb552884d38aea9170c5fe5321bc6",
+          "0x19848149723bbd00545b98f45aa239864d8afd2194fec522af4dd2cb222f9766",
+          "0x8f7c60f27f0b885531538bad8e3cf66f74e2ecdb084f9f3662043d69127bfc8c",
+          "0xd6b3dba9eefc9b556c3bb0f140e7d530759e70ed1283caeb162c31df477c1e1a",
+          "0xa65fe234ac3808801290874c631e55bcfee30e437c78239808729a89d9f2de22",
+          "0x6987d084de71031819f82051ea62b29a354628c3e4a22076a2acc197c776080a",
+          "0x7e50b661a2bedc670bcf32fc9ece12616f6fc4fba5dbe8526292bf3447374009",
+          "0x5f33f46fa571836f090ef8f3e62caee237f8f73c36a711e757a6f71bf8ef9c6a"
+        ],
+        "is_multi_outcome": true
+      }
+    },
+    {
+      "id": "trade_100",
+      "market_id": "25410",
+      "market_question": "[MULTI-ARB] US x Russia military clash by...?",
+      "side": "YES",
+      "entry_price": 0.0495,
+      "amount": 2.0,
+      "shares": 40.4040404040404,
+      "current_price": 0.0495,
+      "entry_time": "2026-02-05T19:43:29.229424",
+      "opportunity_type": "multi_outcome_arb",
+      "status": "OPEN",
+      "exit_price": null,
+      "exit_time": null,
+      "pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "hours_open": 1.979973583888889,
+      "extra_data": {
+        "individual_market_ids": [
+          "548080",
+          "648872",
+          "1127402",
+          "1124834"
+        ],
+        "individual_condition_ids": [
+          "0x0d82012de5e3275b934dcf446b1cce93705b37e9ffe22470fd6caf7411d1d1f6",
+          "0xb1311aeea3677808af7f317895208bf9d3f685ab3f946f67afca11d5ed199dd0",
+          "0xb95d5b530e4f51e2b9f8b65ed18259e2cf385d7e320ec5627c8d0eb61df815dc",
+          "0x3373d3750e99d0fd60da842e688d89b71ad92d6bdd42c329f199add1c5bacb06"
+        ],
+        "is_multi_outcome": true
+      }
+    }
+  ],
+  "closed_positions": [],
+  "stats": {
+    "total_scans": 57,
+    "total_opportunities": 2363,
+    "total_trades": 100,
+    "total_invested": 200.0,
+    "realized_pnl": 0.0,
+    "wins": 0,
+    "losses": 0
+  },
+  "trade_counter": 100,
+  "last_updated": "2026-02-05T21:42:17.134326"
+}
